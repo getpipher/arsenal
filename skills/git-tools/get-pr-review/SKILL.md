@@ -1,7 +1,7 @@
 ---
 name: git-tools-get-pr-review
 description: Retrieve and analyze PR/MR review feedback to improve code quality
-argument-hint: [PR_NUMBER_OR_URL] [--github|--gitlab]
+argument-hint: "[PR_NUMBER_OR_URL] [--github|--gitlab]"
 ---
 
 Bismillah! I'll retrieve and analyze the PR/MR review feedback to help you improve your code based on the reviewer's suggestions.

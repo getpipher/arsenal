@@ -1,7 +1,7 @@
 ---
 name: git-tools-local-sync
 description: Comprehensive git synchronization - fetch all remotes, update all branches, and ensure local repo matches remote completely (dual-remote aware)
-argument-hint: [--cleanup] [--create-missing] [--force] [--prefer-remote <name>]
+argument-hint: "[--cleanup] [--create-missing] [--force] [--prefer-remote <name>]"
 allowed-tools: ["bash", "read", "write", "edit"]
 ---
 

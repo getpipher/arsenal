@@ -1,7 +1,7 @@
 ---
 name: git-tools-standup
 description: Morning standup - PRs, Issues, and activity digest across all GitHub orgs with actionable suggestions
-argument-hint: [timeframe] [--style=A|B|C|D] [--external]
+argument-hint: "[timeframe] [--style=A|B|C|D] [--external]"
 allowed-tools: ["bash", "read", "write", "edit"]
 ---
 

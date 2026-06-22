@@ -1,7 +1,7 @@
 ---
 name: git-tools-create-issue
 description: CIPHER-assisted comprehensive issue creation (GitHub/GitLab) with intelligent questioning, labels, and type assignment
-argument-hint: "<issue-description>" [--github|--gitlab]
+argument-hint: "<issue-description> [--github|--gitlab]"
 allowed-tools: ["bash", "read", "write", "edit"]
 ---
 
