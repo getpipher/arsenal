@@ -1,0 +1,10 @@
+{
+  "name": "arsenal",
+  "version": "0.1.0",
+  "description": "CIPHER's public skill library for pi — Solana, quality gates, git workflows, infra playbooks",
+  "keywords": ["pi-package"],
+  "license": "MIT",
+  "pi": {
+    "skills": ["./skills"]
+  }
+}
