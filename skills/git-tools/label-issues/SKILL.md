@@ -138,7 +138,7 @@ else
     echo "Ready to apply labels to $ISSUE_COUNT issues"
     echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
-    # Will ask user for confirmation via AskUserQuestion
+    # Will ask the user for confirmation inline
 fi
 ```
 

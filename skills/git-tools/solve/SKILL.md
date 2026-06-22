@@ -199,8 +199,7 @@ if [[ -z "$ISSUES" ]]; then
     echo "Cross-repo format: repo#issue (e.g., sip-app#55,101)"
     echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
-    # Use AskUserQuestion
-    # "Which issues? (e.g., 101,104,107 or sip-app#55,101)"
+    # Ask the user which issues to tackle, e.g. "Which issues? 101,104,107 or sip-app#55,101"
 fi
 
 # Parse issues into array (supports cross-repo format)
@@ -317,7 +316,7 @@ $ISSUE_BODY
 
 - Analyze issue requirements
 - Explore relevant code
-- Plan implementation (TodoWrite)
+- Plan implementation (outline steps inline)
 - Write code following project conventions
 - NO PR yet — just commit to work branch
 

@@ -693,7 +693,7 @@ if [[ "$ORG_MODE" == true ]]; then
     echo "Available repos with open PRs:"
     echo "$ALL_ORG_PRS" | jq -r '[.[].repo] | unique | .[]' | nl
 
-    # Use AskUserQuestion to select repo
+    # Ask the user to select a repo inline
 fi
 ```
 

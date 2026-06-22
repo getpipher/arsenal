@@ -173,7 +173,7 @@ Short URLs and redirects supported for both platforms.
 
 ### **Integration Benefits**
 
-- Seamless workflow within Claude Code
+- Seamless workflow within the agent session
 - Consistent with existing slash commands
 - Leverages GitHub CLI for reliability
 - Maintains audit trail and proper attribution
