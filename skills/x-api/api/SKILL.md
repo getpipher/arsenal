@@ -57,7 +57,7 @@ Arguments provided: $ARGUMENTS
 
 ### Bearer Token (App-Only — Read Public Data)
 ```bash
-# IMPORTANT: Claude Code sandbox strips bearer tokens from curl -H arguments.
+# IMPORTANT: the agent sandbox may strip bearer tokens from curl -H arguments.
 # Always use Python for X API calls — curl will silently fail (401).
 source ~/Documents/secret/.env
 python3 -c "

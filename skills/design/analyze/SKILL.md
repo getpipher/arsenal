@@ -47,7 +47,7 @@ When this command is invoked with a URL:
 
 ### Step 1: Fetch & Analyze
 
-Use WebFetch tool to visit the URL and extract:
+Use bash (curl) to fetch the URL and extract:
 
 **Visual Design:**
 - Overall aesthetic (modern SaaS, minimal, playful, corporate, etc.)
