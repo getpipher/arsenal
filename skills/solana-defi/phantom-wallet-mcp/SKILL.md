@@ -8,6 +8,8 @@ patches: none
 
 # Phantom Wallet MCP
 
+> **pi note:** This skill drives the `phantom` MCP server. Stock pi has no built-in MCP, so this is **reference-only** in pi until an MCP-bridge extension exists. For direct wallet integration in pi, use the `solana-defi-phantom-connect` skill (Phantom Connect SDK) instead. If you have an MCP bridge configured, the instructions below apply as-is.
+
 Use the `phantom` MCP server to interact with the user's Phantom wallet directly.
 
 ## Available Tools
