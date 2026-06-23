@@ -16,7 +16,7 @@ Bismillah! This skill runs two complementary QA personas — dev-engineer and en
 Two QA personas working in tandem:
 
 - **Dev-QA agent** — full-breadth code review through a senior QA engineer's lens, framed as next-iteration improvement (not gatekeeping)
-- **End-user QA agent** — real-user perspective via Chrome MCP, narrating the experience in first person
+- **End-user QA agent** — real-user perspective (in pi, ask RECTOR to provide screenshots manually — no Chrome MCP), narrating the experience in first person
 
 Output is *productive feedback for continuous improvement*. Run iteratively (every milestone, every PR, every refactor pass) — the loop is: findings → triage → improvement → re-test → trend.
 
@@ -205,15 +205,15 @@ Skip this phase if `--persona=user`. Otherwise, run dev-QA via the spawn-and-agg
 
 Read code in scope (respecting exclusions from §0.6). Apply the dev-QA prompt template (§1.3) directly without spawning a sub-agent.
 
-### 1.2 Multi-agent fan-out (when `--agents>1`)
+### 1.2 Multi-persona run (when `--agents>1`)
 
 Determine split strategy (top-to-bottom; **first match wins, stop scanning**):
-1. **Polyglot codebase** → split by language (one agent per language)
-2. **Monorepo workspace** → split by sub-package (up to N agents)
+1. **Polyglot codebase** → split by language (one persona per language)
+2. **Monorepo workspace** → split by sub-package (up to N personas)
 3. **Single repo with directory structure** → split by directory (top-level dirs in scope, capped to N)
 4. **None of the above** → split by lens (testing, security, perf, observability — capped to N)
 
-Spawn N agents in parallel via the `Task` tool with subagent_type=general-purpose. Each agent receives:
+Run each persona SEQUENTIALLY in this session (pi has no sub-agents). For each split/lens, apply the dev-QA prompt template (§1.3) and collect its output. Each run receives:
 - The dev-QA prompt template (§1.3) with its slice/lens substituted
 - Its allocated scope (subset of files)
 - Standardized output schema (JSON-like markdown the orchestrator can parse)
@@ -306,15 +306,9 @@ Skip this phase if:
 
 In any of those cases, log "End-user QA disabled: <reason>" and skip to Phase 3.
 
-### 2.1 Load Chrome MCP tools
+### 2.1 Screenshots for end-user QA
 
-Chrome MCP tools are deferred. Load them now:
-
-```
-ToolSearch(query: "select:mcp__claude-in-chrome__tabs_create_mcp,mcp__claude-in-chrome__navigate,mcp__claude-in-chrome__find,mcp__claude-in-chrome__computer,mcp__claude-in-chrome__form_input,mcp__claude-in-chrome__get_page_text,mcp__claude-in-chrome__read_page,mcp__claude-in-chrome__read_console_messages,mcp__claude-in-chrome__javascript_tool,mcp__claude-in-chrome__resize_window,mcp__claude-in-chrome__tabs_context_mcp")
-```
-
-Then call `tabs_context_mcp` once to inspect existing tabs (per Chrome MCP best practice).
+pi has no Chrome MCP. Ask RECTOR to provide screenshots of the relevant screens/flows (or open them in a browser and paste images). Use the attached screenshots to narrate the end-user experience in first person. Skip browser-automation steps and rely on user-provided captures.
 
 ### 2.2 Sequential archetype run
 
