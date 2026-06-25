@@ -17,7 +17,7 @@ Create a starter prompt file that a fresh Claude Code session can use to continu
 
 ## Output
 
-Write to: `~/Documents/secret/claude-strategy/{project}/session-handoff-{YYYY-MM-DD}.md`
+Write to: `~/Documents/secret/strategy/{project}/session-handoff-{YYYY-MM-DD}.md`
 
 If a handoff file already exists for today, append a letter suffix (e.g., `-b`, `-c`).
 
@@ -42,7 +42,7 @@ A **progress table** sits near the top of the handoff (between the header block 
 
 **Generate a progress table when ANY apply:**
 
-1. **Predecessor handoff has one** — `ls -t ~/Documents/secret/claude-strategy/{project}/session-handoff-*.md | head -1` contains `## Progress Table`. Chain consistency > per-session re-evaluation.
+1. **Predecessor handoff has one** — `ls -t ~/Documents/secret/strategy/{project}/session-handoff-*.md | head -1` contains `## Progress Table`. Chain consistency > per-session re-evaluation.
 2. **User explicitly requested** — prompt contains "MUST include progress table" or "include the progress table".
 3. **Work has numbered discrete units** — multi-phase plan with slices/tasks (e.g., "Slice 5.7 done, next 5.8"), or stacked PR chain where order matters.
 4. **More than 3 PRs/issues stacked across sessions** — flat bullet list becomes unscannable.
@@ -60,7 +60,7 @@ A **progress table** sits near the top of the handoff (between the header block 
 1. **Find the most recent predecessor handoff** for this project:
 
    ```bash
-   ls -t ~/Documents/secret/claude-strategy/{project}/session-handoff-*.md 2>/dev/null | head -1
+   ls -t ~/Documents/secret/strategy/{project}/session-handoff-*.md 2>/dev/null | head -1
    ```
 
    Locate its `## Progress Table` section.
@@ -194,7 +194,7 @@ The new session performs the mirror action on arrival: the starter prompt (Step 
 - **No secrets in the prompt** — API keys, passwords, keypairs stay out
 - **Specific over general** — "execute Task 3 in docs/plans/foo.md" beats "continue the work"
 - **Include gotchas** — anything surprising or non-obvious that would trip up a fresh session
-- **Private folder only** — `~/Documents/secret/claude-strategy/` is iCloud-encrypted, safe for strategy context
+- **Private folder only** — `~/Documents/secret/strategy/` is iCloud-encrypted, safe for strategy context
 - **Progress table is part of the chain contract** — once a chain starts using a progress table, every handoff in the chain MUST include + update it. Skipping breaks scannability for the next session and forces a rebuild from prior handoffs.
 - **Progress table echo is the closer, not the full handoff** — Step 7's inline table is a snapshot for the current chat. The handoff file (`.md`) is the durable artifact. Don't paraphrase or trim the table when echoing — render it verbatim.
 - **Opener-echo mirrors the closer** — when a progress table exists, the starter prompt's FIRST instruction MUST be "render the table before doing anything." Embed the table inside the starter-prompt block (Step 4), not as a file reference, so it survives the user pasting the prompt alone. The fresh session renders it as its first action — a "where we left off" snapshot symmetric to Step 7's "where we ended" closer. No table generated → no opener-echo.
