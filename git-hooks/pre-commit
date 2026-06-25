@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# arsenal pre-commit — enforce canonical path literals via the shared linter.
+# (Scans all repos, so it catches cross-repo path drift too.)
+set -uo pipefail
+DOTFILES="${DOTFILES:-$HOME/dotfiles}"
+[ -x "$DOTFILES/scripts/lint-paths.sh" ] && exec "$DOTFILES/scripts/lint-paths.sh"
+exit 0
