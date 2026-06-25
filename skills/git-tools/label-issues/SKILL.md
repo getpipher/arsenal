@@ -269,7 +269,7 @@ For repos with many issues:
 Remember user corrections:
 - Track which suggestions were accepted/rejected
 - Improve future suggestions
-- Store in `.claude/cache/label-patterns.json` (optional)
+- Store in your host's cache dir: `.claude/cache/label-patterns.json` (CC) or `~/.pi/agent/cache/label-patterns.json` (pi) — optional. Detect host via `PI_CODING_AGENT=true` (pi) being set.
 
 ## Integration with Workflows
 

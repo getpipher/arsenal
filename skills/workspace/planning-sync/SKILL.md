@@ -313,10 +313,10 @@ esac
 **Search Patterns:**
 ```
 PRD: PRD.md, REQUIREMENTS.md, PRODUCT_REQUIREMENTS.md
-Locations: /, /docs/, /planning/, /.claude/, /.github/
+Locations: /, /docs/, /planning/, /.github/   (also check host context dir: ~/.claude/ or ~/.pi/agent/ for global notes)
 
 Execution: EXECUTION.md, EXECUTION_PLAN.md, IMPLEMENTATION.md, PROGRESS.md
-Locations: /, /docs/, /planning/, /.claude/
+Locations: /, /docs/, /planning/
 
 Alternative: FEATURES.md, ROADMAP.md, TODO.md, CHANGELOG.md
 ```
@@ -746,10 +746,10 @@ Here's what I suggest for docs/CONFIG_PLAN.md:
 **Tested:** ✅ All commands functional
 
 ### Config Area 3.2: Global Configuration ✅
-**What:** CLAUDE.md workflow preferences
+**What:** CLAUDE.md/AGENTS.md workflow preferences
 **Why:** Consistent AI assistance behavior
 **Implementation:**
-  - Global config: ~/.claude/CLAUDE.md
+  - Global config: host context file (`~/.claude/CLAUDE.md` for CC, `~/.pi/agent/AGENTS.md` for pi — both generated from `~/dotfiles/agent/`)
   - Workflow definitions
   - Code standards and preferences
 **Status:** Complete
